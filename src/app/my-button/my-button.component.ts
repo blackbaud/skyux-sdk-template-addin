@@ -8,7 +8,8 @@ import {
 } from '@blackbaud/skyux-lib-addin-client';
 
 import {
-  AddinClientInitArgs, AddinButtonStyle
+  AddinClientInitArgs,
+  AddinButtonStyle
 } from '@blackbaud/sky-addin-client';
 
 @Component({

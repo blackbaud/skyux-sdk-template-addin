@@ -8,7 +8,9 @@ import {
 } from '@blackbaud/skyux-lib-addin-client';
 
 import {
-  AddinClientInitArgs, AddinTileSummaryStyle, AddinToastStyle
+  AddinClientInitArgs,
+  AddinTileSummaryStyle,
+  AddinToastStyle
 } from '@blackbaud/sky-addin-client';
 
 import {
