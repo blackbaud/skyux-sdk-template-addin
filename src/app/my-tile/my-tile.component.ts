@@ -9,8 +9,7 @@ import {
 
 import {
   AddinClientInitArgs,
-  AddinTileSummaryStyle,
-  AddinToastStyle
+  AddinTileSummaryStyle
 } from '@blackbaud/sky-addin-client';
 
 import {
@@ -70,12 +69,6 @@ export class MyTileComponent implements OnInit {
 
     // TODO:  Update the token in the below URL (you could also build this URL at runtime by injecting the SkyAppConfig service)
     this.showModalInternal('https://host.nxt.blackbaud.com/REPLACE_WITH_YOUR_APP_NAME/add-customer', context);
-  }
-
-  public showToast() {
-    const message: string = 'This is a toast message';
-    const toastStyle: AddinToastStyle = AddinToastStyle.Success;
-    this.addinClientService.showToast({ message: message, style: toastStyle });
   }
 
   public showSettingsModal() {
