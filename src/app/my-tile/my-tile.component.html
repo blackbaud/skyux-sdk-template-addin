@@ -26,19 +26,18 @@
     </a>
   </p>
 
-  <div>
+  <p></p>
+  <p>
+    Click the button to request a user identity token for the current user:
+  </p>
+  <button type="button" class="sky-btn sky-btn-default" (click)="getAuthToken()">Get auth token</button>
+
+  <div *ngIf="userIdentityToken">
+    <p></p>
     <p>
-      The following button shows a modal:
+      The following string represents the identity of the current user, and can be provided to the add-in's backend for validation:
     </p>
-    <button type="button" class="sky-btn sky-btn-default" style="display: inline-block" (click)="showModal()">Show a modal</button>
+    <span>{{ userIdentityToken }}</span>
   </div>
 
-  <div *ngIf="modalResponse">
-    <p></p>
-    <sky-alert alertType="info" closeable="true">
-      The modal returned the following context:
-      <br />
-      <span>{{ modalResponse }}</span>
-    </sky-alert>
-  </div>
 </div>

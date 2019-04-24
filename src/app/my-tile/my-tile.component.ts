@@ -11,7 +11,7 @@ export class MyTileComponent implements OnInit {
 
   public closeHelp: boolean = true;
   public context: any;
-  public modalResponse: string;
+  public userIdentityToken: string;
 
   constructor(
     private addinClientService: AddinClientService
@@ -40,6 +40,14 @@ export class MyTileComponent implements OnInit {
 
   public helpClosed() {
     this.closeHelp = true;
+  }
+
+  public getAuthToken() {
+    this.userIdentityToken = undefined;
+
+     this.addinClientService.getAuthToken().subscribe(token => {
+       this.userIdentityToken = token;
+     });
   }
 
   private showHelp() {

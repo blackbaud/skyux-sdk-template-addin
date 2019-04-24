@@ -34,6 +34,7 @@
     "@skyux/forms": "latest",
     "@skyux/http": "latest",
     "@skyux/i18n": "latest",
+    "@skyux/indicators": "latest",
     "@skyux/omnibar-interop": "latest",
     "@skyux/router": "latest",
     "@skyux/theme": "latest",
