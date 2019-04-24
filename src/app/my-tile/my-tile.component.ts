@@ -8,10 +8,10 @@ import { AddinClientInitArgs, AddinTileSummaryStyle } from '@blackbaud/sky-addin
   styleUrls: ['./my-tile.component.scss']
 })
 export class MyTileComponent implements OnInit {
+
   public closeHelp: boolean = true;
   public context: any;
   public modalResponse: string;
-  public showWelcomeMessage: boolean = true;
 
   constructor(
     private addinClientService: AddinClientService
