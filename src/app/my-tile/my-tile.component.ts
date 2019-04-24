@@ -1,24 +1,6 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-
-import {
-  AddinClientService
-} from '@blackbaud/skyux-lib-addin-client';
-
-import {
-  AddinClientInitArgs,
-  AddinTileSummaryStyle
-} from '@blackbaud/sky-addin-client';
-
-import {
-  MyTileSettingsContext
-} from '../shared/components/my-tile-settings/my-tile-settings-context';
-
-import {
-  SkyModalCloseArgs
-} from '@skyux/modals';
+import { Component, OnInit } from '@angular/core';
+import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
+import { AddinClientInitArgs, AddinTileSummaryStyle } from '@blackbaud/sky-addin-client';
 
 @Component({
   selector: 'my-tile',
@@ -54,10 +36,6 @@ export class MyTileComponent implements OnInit {
     this.addinClientService.helpClick.subscribe(() => {
       this.showHelp();
     });
-
-    this.addinClientService.settingsClick.subscribe(() => {
-      this.showSettingsModal();
-    });
   }
 
   public showModal() {
@@ -69,23 +47,6 @@ export class MyTileComponent implements OnInit {
 
     // TODO:  Update the token in the below URL (you could also build this URL at runtime by injecting the SkyAppConfig service)
     this.showModalInternal('https://host.nxt.blackbaud.com/REPLACE_WITH_YOUR_APP_NAME/add-customer', context);
-  }
-
-  public showSettingsModal() {
-    // provide some context for the modal
-    let context: MyTileSettingsContext = {
-      showWelcomeMessage: this.showWelcomeMessage
-    };
-
-    this.addinClientService.showModal({
-      url: 'https://host.nxt.blackbaud.com/REPLACE_WITH_YOUR_APP_NAME/my-tile-settings',
-      context: context
-    }).subscribe(
-      (result: SkyModalCloseArgs) => {
-        if (result.data && result.reason && result.reason.toLocaleLowerCase() === 'save') {
-          this.showWelcomeMessage = result.data.showWelcomeMessage;
-        }
-      });
   }
 
   public helpClosed() {
