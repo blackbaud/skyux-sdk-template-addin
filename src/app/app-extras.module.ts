@@ -10,10 +10,6 @@ import {
   AddCustomerModalComponent
 } from './add-customer/add-customer-modal.component';
 
-import {
-  MyTileSettingsModalComponent
-} from './shared/components/my-tile-settings/my-tile-settings-modal.component';
-
 // Specify entry components, module-level providers, etc. here.
 import {
   AppSkyModule
@@ -27,8 +23,7 @@ import {
     AddinClientService
   ],
   entryComponents: [
-    AddCustomerModalComponent,
-    MyTileSettingsModalComponent
+    AddCustomerModalComponent
   ]
 })
 export class AppExtrasModule { }
