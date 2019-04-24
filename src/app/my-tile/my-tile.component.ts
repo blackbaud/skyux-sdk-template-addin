@@ -38,17 +38,6 @@ export class MyTileComponent implements OnInit {
     });
   }
 
-  public showModal() {
-    // provide some context for the modal
-    let context = {
-      firstName: 'John',
-      lastName: 'Doe'
-    };
-
-    // TODO:  Update the token in the below URL (you could also build this URL at runtime by injecting the SkyAppConfig service)
-    this.showModalInternal('https://host.nxt.blackbaud.com/REPLACE_WITH_YOUR_APP_NAME/add-customer', context);
-  }
-
   public helpClosed() {
     this.closeHelp = true;
   }
@@ -56,16 +45,4 @@ export class MyTileComponent implements OnInit {
   private showHelp() {
     this.closeHelp = false;
   }
-
-  private showModalInternal(url: string, context: any) {
-    this.modalResponse = undefined;
-
-    this.addinClientService.showModal({
-      url: url,
-      context: context
-    }).subscribe(modalResponse => {
-      this.modalResponse = JSON.stringify(modalResponse, undefined, 2);
-    });
-  }
-
 }
