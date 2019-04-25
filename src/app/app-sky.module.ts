@@ -11,21 +11,14 @@ import {
 } from '@skyux/i18n';
 
 import {
-  SkyWaitModule,
   SkyAlertModule
 } from '@skyux/indicators';
 
-import {
-  SkyModalModule
-} from '@skyux/modals';
-
 @NgModule({
   exports: [
-    SkyAlertModule,
     SkyCheckboxModule,
     SkyI18nModule,
-    SkyModalModule,
-    SkyWaitModule
+    SkyAlertModule
   ]
 })
 export class AppSkyModule { }

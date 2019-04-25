@@ -7,7 +7,7 @@
 
   <h1>{{ 'tile_header' | skyAppResources }}</h1>
 
-  <div *ngIf="showWelcomeMessage">
+  <div>
     <p>Welcome to the SKY UX Add-in template.</p>
 
     <sky-alert alertType="success">
@@ -26,29 +26,18 @@
     </a>
   </p>
 
-  <div>
-    <p>
-      The following button shows a modal:
-    </p>
-    <button type="button" class="sky-btn sky-btn-default" style="display: inline-block" (click)="showModal()">Show a modal</button>
-  </div>
+  <p></p>
+  <p>
+    Click the button to request a user identity token for the current user:
+  </p>
+  <button type="button" class="sky-btn sky-btn-default" (click)="getAuthToken()">Get auth token</button>
 
-  <div>
-    <p>
-      The following button shows a toast:
-    </p>
-    <button type="button" class="sky-btn sky-btn-default" style="display: inline-block" (click)="showToast()">Show a toast</button>
-  </div>
-
-
-  <div *ngIf="modalResponse">
+  <div *ngIf="userIdentityToken" class="my-tile-token">
     <p></p>
-    <sky-alert alertType="info" closeable="true">
-      The modal returned the following context:
-      <br />
-      <span>{{ modalResponse }}</span>
-    </sky-alert>
+    <p>
+      The following string represents the identity of the current user, and can be provided to the add-in's backend for validation:
+    </p>
+    <span>{{ userIdentityToken }}</span>
   </div>
-
 
 </div>
