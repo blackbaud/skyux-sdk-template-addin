@@ -31,7 +31,6 @@
     "@skyux/assets": "latest",
     "@skyux/config": "latest",
     "@skyux/core": "latest",
-    "@skyux/forms": "latest",
     "@skyux/http": "latest",
     "@skyux/i18n": "latest",
     "@skyux/indicators": "latest",
