@@ -5,7 +5,10 @@
     "styles": [
       "@skyux/theme/css/sky.css"
     ]
-  },  
+  },
   "compileMode": "aot",
-  "mode": "easy"
+  "mode": "easy",
+  "redirects": {
+    "": "my-tile"
+  }
 }
