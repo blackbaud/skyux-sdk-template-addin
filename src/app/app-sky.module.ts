@@ -1,9 +1,19 @@
-import { NgModule } from '@angular/core';
-import { SkyAlertModule } from '@skyux/indicators';
+import {
+  NgModule
+} from '@angular/core';
+
+import {
+  SkyPageModule
+} from '@skyux/layout';
+
+import {
+  SkyAlertModule
+} from '@skyux/indicators';
 
 @NgModule({
   exports: [
-    SkyAlertModule
+    SkyAlertModule,
+    SkyPageModule
   ]
 })
 export class AppSkyModule { }

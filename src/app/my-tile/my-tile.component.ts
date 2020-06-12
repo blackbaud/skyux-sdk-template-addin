@@ -1,6 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { AddinClientService } from '@blackbaud/skyux-lib-addin-client';
-import { AddinClientInitArgs } from '@blackbaud/sky-addin-client';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+
+import {
+  AddinClientInitArgs
+} from '@blackbaud/sky-addin-client';
+
+import {
+  AddinClientService
+} from '@blackbaud/skyux-lib-addin-client';
 
 @Component({
   selector: 'my-tile',
@@ -13,12 +22,13 @@ export class MyTileComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.addinClientService.args.subscribe((args: AddinClientInitArgs) => {
-
-      args.ready({
-        showUI: true,
-        title: 'My tile'
+    this.addinClientService
+      .args
+      .subscribe((args: AddinClientInitArgs) => {
+        args.ready({
+          showUI: true,
+          title: 'My tile'
+        });
       });
-    });
   }
 }

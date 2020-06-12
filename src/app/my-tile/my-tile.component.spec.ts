@@ -1,11 +1,21 @@
-import { TestBed, async } from '@angular/core/testing';
-import { SkyAppTestModule } from '@skyux-sdk/builder/runtime/testing/browser';
-import { expect } from '@skyux-sdk/testing';
+import {
+  TestBed
+} from '@angular/core/testing';
+
+import {
+  SkyAppTestModule
+} from '@skyux-sdk/builder/runtime/testing/browser';
+
+import {
+  expect
+} from '@skyux-sdk/testing';
 
 // Component we're going to test
-import { MyTileComponent } from './my-tile.component';
+import {
+  MyTileComponent
+} from './my-tile.component';
 
-describe('My-tile component', () => {
+describe('My tile component', () => {
 
   /**
    * This configureTestingModule function imports SkyAppTestModule, which brings in all of
@@ -15,21 +25,19 @@ describe('My-tile component', () => {
    */
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SkyAppTestModule]
+      imports: [
+        SkyAppTestModule
+      ]
     });
   });
 
-  it('should display a sky-alert', async(() => {
+  it('should display a sky-alert', () => {
     const fixture = TestBed.createComponent(MyTileComponent);
-    fixture.detectChanges();
-    fixture.whenStable()
-      .then(() => {
-        const alertEl = fixture.nativeElement.querySelector('sky-alert');
+    const alertEl = fixture.nativeElement.querySelector('sky-alert');
 
-        // Using custom expect matchers
-        expect(alertEl).toBeVisible();
-        expect(alertEl).toHaveText(`You've just taken your first step into a larger world.`);
-      });
-  }));
+    // Using custom expect matchers
+    expect(alertEl).toBeVisible();
+    expect(alertEl).toHaveText(`You've just taken your first step into a larger world.`);
+  });
 
 });
