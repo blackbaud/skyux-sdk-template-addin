@@ -1,3 +1,7 @@
+# Obsolete
+
+This template is not applicable anymore for new applications.
+
 # skyux-sdk-template-addin
 Template for SKY Add-ins created by the SKY UX CLI
 
